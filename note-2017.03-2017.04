@@ -1,1 +1,11 @@
+3.24:
 
+Silverlight4 BindingMode枚举：
+
+OneWay：创建绑定时更新目标属性。对源对象的更改也会传递到目标。
+OneTime：创建绑定时更新目标属性。
+TwoWay：在进行任意更改时会相应更新目标或源对象。创建绑定后，目标属性从源进行更新。
+
+对于OneWay绑定或TwoWay绑定，对源的动态更改不会自动传播到目标。必须在源对象上实现INotifyPropertyChanged接口。
+对于TwoWay绑定，对目标的更改不会自动自动传播到源。除非绑定目标是Text属性。在这种情况下，更新尽在TexBox失去焦点时发生。
+对于OneTime和OneWay绑定，对SetValue的调用会自动更改目标值并删除绑定。
